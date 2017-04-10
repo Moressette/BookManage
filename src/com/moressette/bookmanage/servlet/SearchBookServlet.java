@@ -47,8 +47,9 @@ public class SearchBookServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8"); 
 		PrintWriter out = response.getWriter();
 		
-		String searchInfo = (String)request.getParameter("search");
+		String searchInfo = request.getParameter("search");
 		request.getSession().setAttribute("searchInfo", searchInfo);
+		System.out.println(searchInfo);
 		boolean isISBN = true;
 		if(searchInfo.length() != 13){
 			isISBN = false;
